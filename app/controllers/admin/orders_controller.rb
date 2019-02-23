@@ -12,7 +12,7 @@ class Admin::OrdersController < Admin::BaseController
     if @order.user_id != @user.id
       render file: 'errors/not_found', status: 404
     else
-      render '/profile/orders/show'
+      render :'/profile/orders/show'
     end
   end
 
@@ -22,6 +22,6 @@ class Admin::OrdersController < Admin::BaseController
     @user = @order.user
     @order_items = @order.order_items_for_merchant(@merchant.id)
 
-    render '/merchants/orders/show'
+    render :'/merchants/orders/show'
   end
 end
